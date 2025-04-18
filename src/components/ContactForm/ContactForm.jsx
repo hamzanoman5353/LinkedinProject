@@ -22,11 +22,8 @@ const ContactForm = () => {
     confirm_policies: false
   });
 
-<<<<<<< HEAD
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);  // Keep success state for success message
 
-=======
->>>>>>> bc7acff99dca59c66ef19f82cd9cbaf21e2d1441
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -34,23 +31,13 @@ const ContactForm = () => {
       [name]: type === 'checkbox' ? checked : value
     });
   };
-<<<<<<< HEAD
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxD5KsFgdPrNBomNE5itOLVE6gehGOC4u6Bw20tSJtwBjiagq13302EFTSE3XnttlI_1Q/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxD5KsFgdPrNBomNE5itOLVE6gehGOC4u6Bw20tSJtwBjiagq13302EFTSE3XnttlI_1Q/exec'; // Update this to the correct URL
 
     try {
       await fetch(scriptURL, {
-=======
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrFSss8gpm360iD_qiS-96RLs840PjA6HpJ_gSk1lvMs9mtoXgqRs8EZY3_2rB9sNZ6g/exec';
-  
-    try {
-      const response = await fetch(scriptURL, {
->>>>>>> bc7acff99dca59c66ef19f82cd9cbaf21e2d1441
         method: 'POST',
         mode: 'no-cors',
         body: JSON.stringify(formData),
@@ -58,10 +45,9 @@ const ContactForm = () => {
           'Content-Type': 'application/json'
         }
       });
-<<<<<<< HEAD
 
-      setShowSuccess(true); // Show thank you message
-      setFormData({         // Reset form fields
+      setShowSuccess(true);  // Show success message
+      setFormData({          // Reset form fields
         owner_name: '',
         personal_email: '',
         contact_no: '',
@@ -84,16 +70,12 @@ const ContactForm = () => {
       // Auto-hide the success message after 5 seconds
       setTimeout(() => setShowSuccess(false), 5000);
 
-=======
-  
-      alert('Successfully Saved');
->>>>>>> bc7acff99dca59c66ef19f82cd9cbaf21e2d1441
+      alert('Successfully Saved');  // Optional: keep alert for additional feedback
     } catch (error) {
       console.error('Error:', error);
       alert('Error submitting data.');
     }
   };
-<<<<<<< HEAD
 
   return (
     <div className="contact-form-container">
@@ -115,13 +97,6 @@ const ContactForm = () => {
         </div>
       )}
 
-=======
-  
-  
-
-  return (
-    <div className="contact-form-container">
->>>>>>> bc7acff99dca59c66ef19f82cd9cbaf21e2d1441
       <form className="contact-form" onSubmit={handleSubmit}>
         <h2>Submit Your Details</h2>
 
